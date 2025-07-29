@@ -8,7 +8,7 @@ import torch
 from tqdm.auto import tqdm
 
 def train_step(model:torch.nn.Module,
-               dataloader:torch.utils.Dataloader,
+               dataloader:torch.utils.data.DataLoader,
                loss_fn:torch.nn.Module,
                optimizer:torch.optim.Optimizer,
                device:torch.device) -> Tuple[float, float]:
@@ -60,7 +60,7 @@ def train_step(model:torch.nn.Module,
 
        #Calculate and accumulate accuaracy metric across all batches
        y_pred_class = torch.argmax(torch.softmax(y_pred,dim=1),dim=1)
-       train_acc += (y_pred_class == y).sum().item()/len(pred)
+       train_acc += (y_pred_class == y).sum().item()/len(y_pred)
 
     #Adjust the metrics to get average loss and accuarcy per batch
     train_loss = train_loss / len(dataloader)
@@ -69,9 +69,8 @@ def train_step(model:torch.nn.Module,
     return train_loss , train_acc
 
 def test_step(model:torch.nn.Module,
-              dataloader:torch.utils.Dataloader,
+              dataloader:torch.utils.data.DataLoader,
               loss_fn:torch.nn.Module,
-              optimizer:torch.optim.Optimizer,
               device:torch.device) -> Tuple[float, float]:
 
     """Tests a PyTorch model for a single epoch.
@@ -126,7 +125,7 @@ def train(model:torch.nn.Module,
           optimizer:torch.optim.Optimizer,
           loss_fn:torch.nn.Module,
           epochs:int,
-          device:torch.device) -> Dict[str,List[float]]:
+          device:torch.device) -> Dict[str,List]:
 
     """Trains and tests a PyTorch model.
 
@@ -165,6 +164,9 @@ def train(model:torch.nn.Module,
                "test_loss": [],
                "test_acc": []
     }
+
+    # Make sure model on target device
+    model.to(device)
 
     # Loop through training and testing steps for a number of epochs
     for epoch in tqdm(range(epochs)):
