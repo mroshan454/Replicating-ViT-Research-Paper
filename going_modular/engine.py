@@ -120,8 +120,8 @@ def test_step(model:torch.nn.Module,
     return test_loss , test_acc
 
 def train(model:torch.nn.Module,
-          train_dataloader:torch.utils.data.Dataloader,
-          test_dataloader:torch.utils.data.Dataloader,
+          train_dataloader:torch.utils.data.DataLoader,
+          test_dataloader:torch.utils.data.DataLoader,
           optimizer:torch.optim.Optimizer,
           loss_fn:torch.nn.Module,
           epochs:int,
