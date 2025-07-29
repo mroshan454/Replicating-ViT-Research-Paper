@@ -53,8 +53,8 @@ def main():
         print(f"{extract_folder} already exists, skipping unzip.")
 
     # Define how many images to sample per class (to total ~500 train, ~100 test)
-    train_samples_per_class = 667  
-    test_samples_per_class = 167  
+    train_samples_per_class = 334  
+    test_samples_per_class = 67 
 
     # Remove sampled_folder if it exists from previous runs
     if os.path.exists(sampled_folder):
