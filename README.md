@@ -32,7 +32,8 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 I recreated key visuals from the ViT paper to understand how it works under the hood:
 
 - **Figure 1 Explaining the ViT architecture**
- ![ViT architecture]https://github.com/mroshan454/Replicating-ViT-Research-Paper/blob/main/images/1.png?raw=true
+  
+ ![ViT architecture](images/1.png)
 - **Multi-Head Self Attention**
 - **Transformer Block**
 - **Position Embeddings**
