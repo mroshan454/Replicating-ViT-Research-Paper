@@ -17,11 +17,11 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 
 * data/
 * going_modular/   #Contains modular functions in .py script file .
-    |---/data_setup.py
-    |---/engine.py
-    |---/helper_function.py
-    |---/image_sampling.py
-    |---/utils.py
+    * |---/data_setup.py
+    * |---/engine.py
+    * |---/helper_function.py
+    * |---/image_sampling.py
+    * |---/utils.py
 * images/          #Contains images explaining equations and figures in ViT Paper , and also images for custom predictions.
 * Modular_Functions_For_Pytorch.ipynb          #Notebook explaining the modular functions for pytorch workflow.
 * Replicating_The_ViT_Paper_from_Scratch.ipynb      #The main ViT Paper Replication Notebook.
