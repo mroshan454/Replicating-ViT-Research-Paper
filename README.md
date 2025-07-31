@@ -34,7 +34,9 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 - **Figure 1 Explaining the ViT architecture**
   
  ![ViT architecture](images/1.png)
-- **Multi-Head Self Attention**
+- **Equation 1**
+  This equation turns the image into patch embeddings and add an extra learnable token and add position embeddings
+  ![Equation 2](images/2.png)
 - **Transformer Block**
 - **Position Embeddings**
 
