@@ -36,8 +36,11 @@ I recreated key visuals from the ViT paper to understand how it works under the 
  ![ViT architecture](images/1.png)
 - **Equation 1**
   This equation turns the image into patch embeddings and add an extra learnable token and add position embeddings
-  ![Equation 2](images/2.png)
-- **Transformer Block**
+  ![Equation 1](images/2.png)
+- **Equation 2&3**
+  The Transformer contains the alternating layer of MSA and MLP Blocks , where LayerNorm(LN) is added before and residual connection is added after.
+  ![Equation 2](images/3.png)
+  ![Equation 3](image/4.png)
 - **Position Embeddings**
 
 
