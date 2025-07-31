@@ -40,7 +40,7 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 - **Equation 2&3**
   The Transformer contains the alternating layer of MSA and MLP Blocks , where LayerNorm(LN) is added before and residual connection is added after.
   ![Equation 2](images/3.png)
-  ![Equation 3](image/4.png)
+  ![Equation 3](images/4.png)
 - **Position Embeddings**
 
 
