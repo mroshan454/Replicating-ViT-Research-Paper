@@ -4,12 +4,13 @@ This is my attempt to replicate the Vision Transformer Paper **"AN IMAGE IS WORT
 
 For this project I'm using ViT to classify human emotions (Happy , Angry , Sad). This project is heavily inspired by the Mr. Daniel Bourke's Online Pytorch Course, which helped me in providing foundation and approach for implementing ViT in a modular and scalable way.
 
-📊 Project Goals
-✅ Replicate the Vision Transformer architecture
-✅ Train a ViT model from scratch
-✅ Fine-tune a pretrained ViT model
-✅ Classify human emotions using facial expression images
-✅ Deploy the final model (coming soon)
+**📊 Project Goals**
+
+- ✅ Replicate the Vision Transformer architecture
+- ✅ Train a ViT model from scratch
+- ✅ Fine-tune a pretrained ViT model
+- ✅ Classify human emotions using facial expression images
+- ✅ Deploy the final model (coming soon)
 
 
 
