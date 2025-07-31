@@ -31,14 +31,12 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 
 I recreated key visuals from the ViT paper to understand how it works under the hood:
 
-- **Patch Embedding**
- https://github.com/mroshan454/Replicating-ViT-Research-Paper/blob/main/images/1.png?raw=true
+- **Figure 1 Explaining the ViT architecture**
+ ![ViT architecture]https://github.com/mroshan454/Replicating-ViT-Research-Paper/blob/main/images/1.png?raw=true
 - **Multi-Head Self Attention**
 - **Transformer Block**
 - **Position Embeddings**
 
-![Patch Embedding](images/patch_embedding.png)
-![MSA](images/multi_head_attention.png)
 
 
 
