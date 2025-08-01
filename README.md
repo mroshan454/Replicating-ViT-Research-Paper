@@ -13,7 +13,7 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 - ✅ Train a ViT model from scratch
 - ✅ Fine-tune a pretrained ViT model
 - ✅ Classify human emotions using facial expression images
-- ✅ Deploy the final model (coming soon)
+- ✅ Compare Performance of ViT Built from scratch vs. Pretrained ViT 
 
 
 **🗂️Repository Structure**
