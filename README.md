@@ -62,8 +62,9 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 
 ## Project Workflow in a Nutshell
 This project is to replicate the Vision Transformer Architecture and Equations into usable code to classify images to detect the emotion in it (happy, sad , angry).
-![Project in a nutshell](images/project in a nutshell 1 .png)
-![Project in a nutshell](images/project in a nutshell 2.png)
+![Project in a nutshell](images/project3.png)
+
+![Project in a nutshell](images/project2.png)
 
 
 
