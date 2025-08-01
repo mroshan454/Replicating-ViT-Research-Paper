@@ -44,7 +44,10 @@ I recreated key visuals from the ViT paper to understand how it works under the 
   The Transformer contains the alternating layer of MSA and MLP Blocks , where LayerNorm(LN) is added before and residual connection is added after.
   ![Equation 2](images/3.png)
   ![Equation 3](images/4.png)
-- **Position Embeddings**
+- **Equation 4**
+  [class] Token for Image Classification
+  The [class] token output (z₀ᴸ) becomes the image representation y, passed to an MLP (1 hidden layer during pre-training, linear layer during fine-tuning).
+  ![Equation 4](images/5.png)
 
 
 
