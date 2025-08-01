@@ -32,6 +32,16 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 
 ## 📖 Understanding Vision Transformers
 
+### 1. Why Vision Transfomers?
+- Traditional Convolutional Neural Networks(CNNS) dominates the computer vision due to their ability to capture local patterns. However, CNNs have limitations in modeling long-range dependencies and lack flexibility. Vision Transformers leverage self-attention to overcome this by treating images like sequences, similar to how NLP models treat sentences.
+
+### 2. Transformers in NLP
+- Transformers were originally introduced in the famous paper `Attention is All you Need(2017)` and was originally designed for NLP tasks. They use self-attention to weigh relationships between tokens in a sequence.
+
+### 3. From Words -> Patches to Image -> Patches 
+- In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them. 
+
+
 I recreated key visuals from the ViT paper to understand how it works under the hood:
 
 - **Figure 1 Explaining the ViT architecture**
