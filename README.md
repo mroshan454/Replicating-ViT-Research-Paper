@@ -1,6 +1,6 @@
 # Replicating-ViT-Research-Paper: Emotion Detection from Facial Images using Vision Transformers🎭📝💻
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
 
 
 This is my attempt to replicate the Vision Transformer Paper **"AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE"** from scratch using *PyTorch*.
