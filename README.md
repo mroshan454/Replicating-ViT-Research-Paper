@@ -13,7 +13,7 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 - ✅ Train a ViT model from scratch
 - ✅ Fine-tune a pretrained ViT model
 - ✅ Classify human emotions using facial expression images
-- ✅ Deploy the final model (coming soon)
+- ✅ Compare Performance of ViT Built from scratch vs. Pretrained ViT 
 
 
 **🗂️Repository Structure**
@@ -62,6 +62,8 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 
 ## Project Workflow in a Nutshell
 This project is to replicate the Vision Transformer Architecture and Equations into usable code to classify images to detect the emotion in it (happy, sad , angry).
+
+![Project in a nutshell](images/ProjectN.png)
 ![Project in a nutshell](images/project3.png)
 
 ![Project in a nutshell](images/project2.png)
