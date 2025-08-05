@@ -88,6 +88,8 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - This helps transform the representations in a more complex way.
 - Again, we apply Layer Normalization and a residual connection.
   ![Equation 3](images/4.png)
+  **Turning Equation 3 into Usable Code**
+  ![Equation 3 to Code](images/Equation3_toCode.png)
 ### Equation 4
 - **Equation 4 Explaination🧠**
 - At the very beginning (Eq. 1), we prepended a special [class] token to the patch embeddings.
