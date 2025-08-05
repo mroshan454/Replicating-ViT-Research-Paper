@@ -71,6 +71,8 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 This entire sequence becomes the model's input, just like tokens in a sentence for a language model.
  
   ![Equation 1](images/2.png)
+  **Turning Equation 1 into Usable Code**
+  ![Equation 1 to Code](images/Equation1_to_Code.png)
 ### Equation 2&3
 - **Equation 2 Explaination🧠**
 After forming the input token sequence from Equation 1, we feed it into a standard Transformer encoder block. The first step in that block is the Multi-Head Self-Attention (MSA) mechanism.
