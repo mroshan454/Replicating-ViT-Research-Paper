@@ -57,7 +57,8 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 - **Figure 1 Explaining the ViT architecture**
   
  ![ViT architecture](images/1.png)
-- **Equation 1 - Splitting the image into patches and flattening them**
+### Equation 1 - Splitting the image into patches and flattening them
+**Equation 1 Explaination🧠**
   This equation turns the image into patch embeddings and add an extra learnable token and add position embeddings
 
   Before the input image can be passed through the Vision Transformer (ViT), it needs to be converted into a sequence format, similar to how words are processed in NLP.
@@ -70,7 +71,7 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 This entire sequence becomes the model's input, just like tokens in a sentence for a language model.
  
   ![Equation 1](images/2.png)
-- **Equation 2&3**
+### Equation 2&3
 - **Equation 2 Explaination🧠**
 After forming the input token sequence from Equation 1, we feed it into a standard Transformer encoder block. The first step in that block is the Multi-Head Self-Attention (MSA) mechanism.
 - Each token attends to all other tokens, including itself.
@@ -83,7 +84,7 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - This helps transform the representations in a more complex way.
 - Again, we apply Layer Normalization and a residual connection.
   ![Equation 3](images/4.png)
-- **Equation 4**
+### Equation 4
 - **Equation 4 Explaination🧠**
 - At the very beginning (Eq. 1), we prepended a special [class] token to the patch embeddings.
 - After passing through L Transformer layers, we take the output corresponding to the [class] token (i.e.,z_0^L) as the final image representation.
