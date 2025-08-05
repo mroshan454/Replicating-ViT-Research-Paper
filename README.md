@@ -48,6 +48,9 @@ ViT processes an image by:
 ### Transformers in NLP
 - Transformers were originally introduced in the famous paper `Attention is All you Need(2017)` and was originally designed for NLP tasks. They use self-attention to weigh relationships between tokens in a sequence.
 
+
+## Project Implementation 💻📐
+
 ### From Words -> Patches to Image -> Patches 
 - In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them. 
 
@@ -101,6 +104,10 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 
 ![Equation 4](images/5.png)
 
+### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
+![All together](images/Entire_ViT_in_Code.png)
+![All together](images/Whole_ViT_in_PyTorch_Code.png)
+
 
 ## Project Workflow in a Nutshell
 This project is to replicate the Vision Transformer Architecture and Equations into usable code to classify images to detect the emotion in it (happy, sad , angry).
@@ -110,7 +117,7 @@ This project is to replicate the Vision Transformer Architecture and Equations i
 
 ![Project in a nutshell](images/project2.png)
 
-## Project Implementation 
+
 
 
 
