@@ -48,7 +48,7 @@ ViT processes an image by:
 ### Transformers in NLP
 - Transformers were originally introduced in the famous paper `Attention is All you Need(2017)` and was originally designed for NLP tasks. They use self-attention to weigh relationships between tokens in a sequence.
 
-### 3. From Words -> Patches to Image -> Patches 
+### From Words -> Patches to Image -> Patches 
 - In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them. 
 
 
