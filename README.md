@@ -79,6 +79,10 @@ This project is to replicate the Vision Transformer Architecture and Equations i
 
 ![Project in a nutshell](images/project2.png)
 
+## Project Implementation 
+
+
+
 
 
 
