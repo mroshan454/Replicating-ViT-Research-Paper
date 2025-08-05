@@ -81,6 +81,8 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - MSA allows the model to jointly focus on different representation subspaces.
 - This is followed by Layer Normalization and a skip connection (residual connection).
   ![Equation 2](images/3.png)
+  **Turning Equation 2 into Usable Code**
+  ![Equation 2 to Code](images/Equation2_to_Code.png)
 - **Equation 3 Explaination🧠**
 - After applying MSA, the result is passed through a position-wise feedforward network — essentially a *2-layer MLP* with a *non-linear activation* (usually GELU or ReLU).
 - This helps transform the representations in a more complex way.
