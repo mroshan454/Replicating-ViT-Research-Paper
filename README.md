@@ -59,16 +59,40 @@ I recreated key visuals from the ViT paper to understand how it works under the 
  ![ViT architecture](images/1.png)
 - **Equation 1 - Splitting the image into patches and flattening them**
   This equation turns the image into patch embeddings and add an extra learnable token and add position embeddings
-  
+
+  Before the input image can be passed through the Vision Transformer (ViT), it needs to be converted into a sequence format, similar to how words are processed in NLP.
+
+- The input image is split into fixed-size patches (e.g., 16x16).
+- Each patch is flattened into a 1D vector.
+- A special learnable [CLS] token is prepended to represent the entire image.
+- Positional embeddings are added to retain information about the order of patches.
+
+This entire sequence becomes the model's input, just like tokens in a sentence for a language model.
+ 
   ![Equation 1](images/2.png)
 - **Equation 2&3**
-  The Transformer contains the alternating layer of MSA and MLP Blocks , where LayerNorm(LN) is added before and residual connection is added after.
+- **Equation 2 Explaination🧠**
+After forming the input token sequence from Equation 1, we feed it into a standard Transformer encoder block. The first step in that block is the Multi-Head Self-Attention (MSA) mechanism.
+- Each token attends to all other tokens, including itself.
+- This helps the model learn relationships between different image patches.
+- MSA allows the model to jointly focus on different representation subspaces.
+- This is followed by Layer Normalization and a skip connection (residual connection).
   ![Equation 2](images/3.png)
+- **Equation 3 Explaination🧠**
+- After applying MSA, the result is passed through a position-wise feedforward network — essentially a *2-layer MLP* with a *non-linear activation* (usually GELU or ReLU).
+- This helps transform the representations in a more complex way.
+- Again, we apply Layer Normalization and a residual connection.
   ![Equation 3](images/4.png)
 - **Equation 4**
-  [class] Token for Image Classification
-  The [class] token output (z₀ᴸ) becomes the image representation y, passed to an MLP (1 hidden layer during pre-training, linear layer during fine-tuning).
-  ![Equation 4](images/5.png)
+- **Equation 4 Explaination🧠**
+- At the very beginning (Eq. 1), we prepended a special [class] token to the patch embeddings.
+- After passing through L Transformer layers, we take the output corresponding to the [class] token (i.e.,z_0^L) as the final image representation.
+- This vector now goes through a classification head:
+- During pretraining: it's an MLP with one hidden layer.
+- During fine-tuning: it's a single linear layer.
+- The result is the final logits used for classification (e.g., happy/sad/angry).
+
+![Equation 4](images/5.png)
 
 
 ## Project Workflow in a Nutshell
