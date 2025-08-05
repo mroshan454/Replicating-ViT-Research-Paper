@@ -105,6 +105,7 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 ![Equation 4](images/5.png)
 
 ### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
+![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
 
