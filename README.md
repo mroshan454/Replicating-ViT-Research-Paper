@@ -32,10 +32,20 @@ For this project I'm using ViT to classify human emotions (Happy , Angry , Sad).
 
 ## 📖 Understanding Vision Transformers
 
-### 1. Why Vision Transfomers?
-- Traditional Convolutional Neural Networks(CNNS) dominates the computer vision due to their ability to capture local patterns. However, CNNs have limitations in modeling long-range dependencies and lack flexibility. Vision Transformers leverage self-attention to overcome this by treating images like sequences, similar to how NLP models treat sentences.
+### 🧠 What is Vision Transformer (ViT)?
 
-### 2. Transformers in NLP
+ViT treats image patches like tokens in NLP and applies Transformer encoders to classify images.
+
+ViT processes an image by:
+1. Splitting it into patches
+2. Embedding each patch
+3. Passing through Transformer blocks
+4. Using the [CLS] token for classification
+
+### Why Vision Transfomers?
+- Traditional Convolutional Neural Networks(CNNS) dominates the computer vision due to their ability to capture local patterns. However, CNNs have limitations in modeling long-range dependencies and lack flexibility. Vision Transformers leverage self-attention to overcome this by treating images like sequences, similar to how NLP models treat sentences.
+  
+### Transformers in NLP
 - Transformers were originally introduced in the famous paper `Attention is All you Need(2017)` and was originally designed for NLP tasks. They use self-attention to weigh relationships between tokens in a sequence.
 
 ### 3. From Words -> Patches to Image -> Patches 
@@ -47,8 +57,9 @@ I recreated key visuals from the ViT paper to understand how it works under the 
 - **Figure 1 Explaining the ViT architecture**
   
  ![ViT architecture](images/1.png)
-- **Equation 1**
+- **Equation 1 - Splitting the image into patches and flattening them**
   This equation turns the image into patch embeddings and add an extra learnable token and add position embeddings
+  
   ![Equation 1](images/2.png)
 - **Equation 2&3**
   The Transformer contains the alternating layer of MSA and MLP Blocks , where LayerNorm(LN) is added before and residual connection is added after.
@@ -67,6 +78,8 @@ This project is to replicate the Vision Transformer Architecture and Equations i
 ![Project in a nutshell](images/project3.png)
 
 ![Project in a nutshell](images/project2.png)
+
+
 
 
 
