@@ -12,7 +12,7 @@ For this project I'm using ViT to classify Plant Leaf Diseases for Tomato 🍅 ,
 - ✅ Replicate the Vision Transformer architecture
 - ✅ Train a ViT model from scratch
 - ✅ Fine-tune a pretrained ViT model
-- ✅ Classify human emotions using facial expression images
+- ✅ Classify Plant Leaf Disease using Healthy and Affected Leaf Images 
 - ✅ Compare Performance of ViT Built from scratch vs. Pretrained ViT 
 
 
