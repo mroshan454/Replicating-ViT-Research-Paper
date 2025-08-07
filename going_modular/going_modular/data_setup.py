@@ -11,6 +11,7 @@ NUM_WORKERS = os.cpu_count()
 
 def create_dataloaders(
     train_data:str,
+    test_dir: str,
     transform:transforms.Compose,
     batch_size:int,
     num_workers:int=NUM_WORKERS
