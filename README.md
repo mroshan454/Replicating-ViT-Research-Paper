@@ -1,11 +1,11 @@
-# Replicating-ViT-Research-Paper: Emotion Detection from Facial Images using Vision Transformers🎭📝💻
+# Replicating-ViT-Research-Paper: Plant Leaf Disease Detection using Vision Transformers 🍃🍂🧑‍🔬📝💻
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
 
 
 This is my attempt to replicate the Vision Transformer Paper **"AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE"** from scratch using *PyTorch*.
 
-For this project I'm using ViT to classify human emotions (Happy , Angry , Sad). This project is heavily inspired by the Mr. Daniel Bourke's Online Pytorch Course, which helped me in providing foundation and approach for implementing ViT in a modular and scalable way.
+For this project I'm using ViT to classify Plant Leaf Diseases for Tomato 🍅 , BellPepper🫑 and Potato🥔. This project is heavily inspired by the Mr. Daniel Bourke's Online Pytorch Course, which helped me in providing foundation and approach for implementing ViT in a modular and scalable way.
 
 **📊 Project Goals**
 
@@ -108,14 +108,6 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 ![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
-
-## Project Workflow in a Nutshell
-This project is to replicate the Vision Transformer Architecture and Equations into usable code to classify images to detect the emotion in it (happy, sad , angry).
-
-![Project in a nutshell](images/ProjectN.png)
-![Project in a nutshell](images/project3.png)
-
-![Project in a nutshell](images/project2.png)
 
 
 
