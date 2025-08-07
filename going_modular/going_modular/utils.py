@@ -1,15 +1,13 @@
 """
 Contains various utility functions for PyTorch model training and saving.
 """
+import torch
+from pathlib import Path
 
-from pathlib import Path 
-
-import torch 
-
-def save_model(model:torch.nn.Module,
-               target_dir:str,
-               model_name:str):
-  """Saves a PyTorch model to a target directory.
+def save_model(model: torch.nn.Module,
+               target_dir: str,
+               model_name: str):
+    """Saves a PyTorch model to a target directory.
 
     Args:
     model: A target PyTorch model to save.
