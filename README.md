@@ -164,7 +164,21 @@ We're going to focus on replicating ViT-Base (start small and scale up when nece
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
 ## B. Pretrained ViT Fine-tuning
+
 Given that training from scratch with only ~500 images per class led to underfitting (compared to millions of images in the original paper), I fine-tuned a pretrained ViT model on the same dataset. This significantly improved accuracy and stability in predictions.
+
+
+
+## C. Code Structure & Modularity
+To ensure the project remains scalable, maintainable, and easy to experiment with, the codebase follows a modular design inspired by Daniel Bourke’s PyTorch workflow:
+Separate files for dataset processing, model architecture, training/validation loops, and utility functions.
+- Configuration-driven design — key parameters (learning rate, batch size, number of epochs) can be changed in a single config section without altering core logic.
+- Reusability — training and evaluation functions are generic enough to be reused across experiments and datasets.
+- Ease of debugging — isolated components make troubleshooting straightforward.
+This modular approach made it possible to switch between the scratch-built ViT and pretrained ViT with minimal code changes, accelerating iteration speed.
+
+
+
 
 # 5. Results and Evaluation 📈📝
 
@@ -205,6 +219,19 @@ I have made custom predictions on the images of the tomato leaves I have found o
 
 ### Actual Label - Healthy Tomato Leaf | Predicted Correctly with Prediction Probability - 98% ✅
 ![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Healthy.png)
+
+### D. Key Takeaways 🎯
+
+- From Scratch ViT underperformed due to the small scale of Training data and absence of advanced optimization training techniques.
+- Fine-tuned Pretrained ViT performed **61% more higher accuracy** on the same training dataset.
+- Even with just 3 classes , transfer learning delivers production-ready performance.
+
+### E. Lessons Learned 📖
+- Data quantity and quality are crucial for training transformer models from scratch.
+- Pretraining + fine-tuning is a game-changer for small datasets.
+- Tracking both loss and accuracy per epoch makes model performance easier to interpret and present.
+
+
 
 
 
