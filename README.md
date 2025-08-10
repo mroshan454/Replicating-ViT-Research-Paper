@@ -168,13 +168,25 @@ Given that training from scratch with only ~500 images per class led to underfit
 
 # 5. Results and Evaluation 📈📝
 
-## A. Performance Comparison 
+## A. Performance Comparison  
 
 | Model Variant                    | Train Accuracy | Test Accuracy | Train Loss | Test Loss | Observations                                                                                   |
 | -------------------------------- | -------------- | ------------- | ---------- | --------- | ---------------------------------------------------------------------------------------------- |
 | **ViT (from scratch)**           | 33.79%         | 37.50%        | 1.1173     | 1.1087    | Struggled to converge due to limited data and lack of LR warmup, decay, and gradient clipping. |
 | **ViT (pretrained, fine-tuned)** | **98.45%**     | **98.96%**    | 0.0697     | 0.0686    | Achieved near-perfect accuracy thanks to transfer learning from ImageNet weights.              |
 
+## B. Accuracy Progression Over the Epochs 
+
+#### Performance of ViT Built from Scratch 
+
+![ViT From Scratch Performance](images/ViT_from_scratch_Performance.png)
+
+You can see the ViT Built from scratch is not showing promising performance and it looks messy to be honest!!
+
+#### Performance of Pre-trained ViT 
+![Pretrained ViT Performance](images/Pretrained_VIT_Performance.png)
+
+The Pretrained ViT Performance really well , and it looks like the Perfect Loss Curve!!!!🤩👍
 
 
 
