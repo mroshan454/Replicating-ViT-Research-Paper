@@ -199,12 +199,14 @@ I have made custom predictions on the images of the tomato leaves I have found o
 ![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Early_Blight.png)
 
 
-### Actual Label - Tomato Leaf Late Blight | Predicted Correctly with Prediction Probability - 92% ✅
+### Actual Label - Tomato Leaf Late Blight | Predicted Correctly with Prediction Probability - 99% ✅
 ![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Late_Blight.png)
 
 
 ### Actual Label - Healthy Tomato Leaf | Predicted Correctly with Prediction Probability - 98% ✅
 ![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Healthy.png)
+
+
 
 
 
