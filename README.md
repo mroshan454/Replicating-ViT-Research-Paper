@@ -77,6 +77,16 @@ The goal was to replicate the whole ViT architecture from scratch as closely as 
 
 - This research paper contains Figures and Equations  which decribe the ViT architecture as pieces of puzzle and we are here to put all together to form the puzzle. Recreating This will help us to understand the math behind the architecture and how it works under the hood.
 
+- Key steps:
+**Patch Extraction** – splitting input images into fixed-size patches and flattening them.
+**Linear Projection** – embedding patches into a dense representation.
+**Positional Encoding** – adding positional information to embeddings.
+**Transformer Encoder** – processing embeddings through stacked encoder blocks consisting of:
+   - Multi-Head Self Attention (MHSA)  
+   - Add & Norm (residual connections + layer normalization)**
+   - Feed-Forward Network (FFN)
+   - Add & Norm
+
 - **Figure 1 Explaining the ViT architecture**
   
  ![ViT architecture](images/1.png)
@@ -152,6 +162,21 @@ We're going to focus on replicating ViT-Base (start small and scale up when nece
 ### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
 ![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
+
+## B. Pretrained ViT Fine-tuning
+Given that training from scratch with only ~500 images per class led to underfitting (compared to millions of images in the original paper), I fine-tuned a pretrained ViT model on the same dataset. This significantly improved accuracy and stability in predictions.
+
+# 5. Results and Evaluation 📈📝
+
+## A. Performance Comparison 
+
+| Model Variant                    | Train Accuracy | Test Accuracy | Train Loss | Test Loss | Observations                                                                                   |
+| -------------------------------- | -------------- | ------------- | ---------- | --------- | ---------------------------------------------------------------------------------------------- |
+| **ViT (from scratch)**           | 33.79%         | 37.50%        | 1.1173     | 1.1087    | Struggled to converge due to limited data and lack of LR warmup, decay, and gradient clipping. |
+| **ViT (pretrained, fine-tuned)** | **98.45%**     | **98.96%**    | 0.0697     | 0.0686    | Achieved near-perfect accuracy thanks to transfer learning from ImageNet weights.              |
+
+
+
 
 
 
