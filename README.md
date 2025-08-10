@@ -265,6 +265,12 @@ Deploy the EfficientNet-B2 + Gradio app on Hugging Face Spaces.
 Extend dataset coverage to all 39 classes for broader agricultural use cases.
 Integrate a fine-tuned LLM to provide instant, detailed treatment suggestions for detected diseases.
 
+# Acknowledgements🙏
+
+I want to give a special thanks to **Daniel Bourke**, whose PyTorch course was a true game-changer in my journey to master PyTorch and Vision Transformers. Without his clear explanations, practical approach, and modular code style, I wouldn’t have been able to implement and understand the Vision Transformer architecture so effectively. Daniel is truly a hero in my PyTorch learning path, and I highly recommend his course to anyone serious about mastering PyTorch!!.
+
+Course repository - https://github.com/mrdbourke/pytorch-deep-learning/
+
 
 
 
