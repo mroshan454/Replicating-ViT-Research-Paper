@@ -181,8 +181,12 @@ Given that training from scratch with only ~500 images per class led to underfit
 
 ![ViT From Scratch Performance](images/ViT_from_scratch_Performance.png)
 
+You can see the ViT Built from scratch is not showing promising performance and it looks messy to be honest!!
+
 #### Performance of Pre-trained ViT 
 ![Pretrained ViT Performance](images/Pretrained_VIT_Performance.png)
+
+The Pretrained ViT Performance really well , and it looks like the Perfect Loss Curve!!!!🤩👍
 
 
 
