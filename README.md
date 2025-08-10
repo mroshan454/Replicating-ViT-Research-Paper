@@ -73,10 +73,9 @@ Using fewer classes and fewer images allowed faster iteration and debugging with
 
 The goal was to replicate the whole ViT architecture from scratch as closely as possible for image classification. 
 
-- In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them. 
+- In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them.
 
-
-I recreated key visuals from the ViT paper to understand how it works under the hood:
+- This research paper contains Figures and Equations  which decribe the ViT architecture as pieces of puzzle and we are here to put all together to form the puzzle. Recreating This will help us to understand the math behind the architecture and how it works under the hood.
 
 - **Figure 1 Explaining the ViT architecture**
   
@@ -124,6 +123,36 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - The result is the final logits used for classification (e.g., happy/sad/angry).
 
 ![Equation 4](images/5.png)
+
+### Table 1 : 
+
+The final piece of the ViT architecture puzzle we'll focus on (for now) is Table 1.
+
+
+| Model | Layers | Hidden size $D$ | MLP size | Heads | Params |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| ViT-Base | 12 | 768 | 3072 | 12 | $86M$ |
+| ViT-Large | 24 | 1024 | 4096 | 16 | $307M$ |
+| ViT-Huge | 32 | 1280 | 5120 | 16 | $632M$ |
+
+* ViT-Base , ViT-Large and ViT-Huge are all different sizes of the same model architecture.
+
+* Layers - the number of transformer encoder layers
+* Hidden size $D$ - the embedding size throughout the architecture
+* MLP size - the number of hidden units/neurons in the MLP
+* Head - the number of multi-head self-attention
+
+  
+Table 1: Details of Vision Transformer model variants. Source: ViT paper.
+
+This table showcasing the various hyperparameters of each of the ViT architectures.
+
+You can see the numbers gradually increase from ViT-Base to ViT-Huge.
+
+We're going to focus on replicating ViT-Base (start small and scale up when necessary) but we'll be writing code that could easily scale up to the larger variants.
+
+Breaking the hyperparameters down:
+We'll use these values as the hyperparameter settings for our ViT architecture.
 
 ### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
 ![All together](images/Entire_ViT_in_Code.png)
