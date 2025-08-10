@@ -177,9 +177,11 @@ Given that training from scratch with only ~500 images per class led to underfit
 
 ## B. Accuracy Progression Over the Epochs 
 
-#### Performance of ViT Built from Scratch vs. Pre-trained ViT 
+#### Performance of ViT Built from Scratch 
 
 ![ViT From Scratch Performance](images/ViT_from_scratch_Performance.png)
+
+#### Performance of Pre-trained ViT 
 ![Pretrained ViT Performance](images/Pretrained_VIT_Performance.png)
 
 
