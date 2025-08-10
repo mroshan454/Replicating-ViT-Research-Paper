@@ -128,12 +128,15 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 
 The final piece of the ViT architecture puzzle we'll focus on (for now) is Table 1.
 
+Table 1: Details of Vision Transformer model variants. Source: ViT paper.
 
 | Model | Layers | Hidden size $D$ | MLP size | Heads | Params |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | ViT-Base | 12 | 768 | 3072 | 12 | $86M$ |
 | ViT-Large | 24 | 1024 | 4096 | 16 | $307M$ |
 | ViT-Huge | 32 | 1280 | 5120 | 16 | $632M$ |
+
+This table showcasing the various hyperparameters of each of the ViT architectures.
 
 * ViT-Base , ViT-Large and ViT-Huge are all different sizes of the same model architecture.
 
@@ -142,17 +145,9 @@ The final piece of the ViT architecture puzzle we'll focus on (for now) is Table
 * MLP size - the number of hidden units/neurons in the MLP
 * Head - the number of multi-head self-attention
 
-  
-Table 1: Details of Vision Transformer model variants. Source: ViT paper.
-
-This table showcasing the various hyperparameters of each of the ViT architectures.
-
 You can see the numbers gradually increase from ViT-Base to ViT-Huge.
 
 We're going to focus on replicating ViT-Base (start small and scale up when necessary) but we'll be writing code that could easily scale up to the larger variants.
-
-Breaking the hyperparameters down:
-We'll use these values as the hyperparameter settings for our ViT architecture.
 
 ### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
 ![All together](images/Entire_ViT_in_Code.png)
