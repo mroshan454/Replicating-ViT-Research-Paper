@@ -188,6 +188,24 @@ You can see the ViT Built from scratch is not showing promising performance and 
 
 The Pretrained ViT Performance really well , and it looks like the Perfect Loss Curve!!!!🤩👍
 
+### C. Custom Prediction on Images using Pre-Trained ViT 🍃✅
+
+We trained the Model on 3 Classes from Plant Village Dataset , which **Tomato Leaf Early Blight** , **Tomato Leaf Late Blight*** and **Healthy Tomato Leaf**.
+
+I have made custom predictions on the images of the tomato leaves I have found online and it give promising results.
+
+
+### Actual Label - Tomato Leaf Early Blight | Predicted Correctly with Prediction Probability - 88% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Early_Blight.png)
+
+
+### Actual Label - Tomato Leaf Late Blight | Predicted Correctly with Prediction Probability - 92% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Late_Blight.png)
+
+
+### Actual Label - Healthy Tomato Leaf | Predicted Correctly with Prediction Probability - 98% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Healthy.png)
+
 
 
 
