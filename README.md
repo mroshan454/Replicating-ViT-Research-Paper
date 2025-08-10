@@ -232,6 +232,40 @@ I have made custom predictions on the images of the tomato leaves I have found o
 - Tracking both loss and accuracy per epoch makes model performance easier to interpret and present.
 
 
+# 6. Deployement and Next Steps 🚀📱
+
+## A. Deployment Plan
+The project will be deployed in a way that maximizes accessibility for end-users and demonstrates industry-ready skills:
+**1. Model Optimization** 
+- Use EfficientNet-B2 for real-time inference.
+- Fine-tuned on 8 plant disease classes for lightweight, mobile-friendly performance.
+- Apply model quantization to reduce file size and improve latency.
+**2.User Interface with Gradio**
+- Build a Gradio web app allowing users to upload or capture leaf images.
+- Instant predictions with disease name, confidence score, and (planned) basic treatment suggestions.
+**3.Hosting on Hugging Face Spaces**
+- Deploy the Gradio app directly to Hugging Face Spaces for free public access.
+- Allows anyone (including recruiters) to try the model in their browser — no setup required.
+- Shareable live demo link for portfolio, resume, and LinkedIn post.
+
+# 7. Conclusion & Key Takeaways 🏁
+This project began as a research & replication exercise and evolved into a practical, deployable AI solution.
+### Phase 1 — Learning by Building:
+I replicated the Vision Transformer (ViT) architecture from scratch to understand the underlying math and mechanisms, including patch embeddings, positional encoding, and multi-head self-attention. While training on a small dataset (~500 images per class) led to underfitting, this phase deepened my transformer intuition.
+### Phase 2 — Leveraging Transfer Learning:
+I fine-tuned a pretrained ViT on my custom plant disease dataset, achieving ~98.96% test accuracy. This confirmed the power of large-scale pretraining and transfer learning in real-world scenarios.
+### Phase 3 — Preparing for Deployment:
+To make the solution lightweight and accessible, I am transitioning to EfficientNet-B2, building a Gradio-based interface, and deploying it on Hugging Face Spaces for instant public access.
+#### Key Lessons Learned:
+Architecture alone isn’t enough — data quantity & quality matter as much as model design.
+Pretraining is a game-changer — fine-tuning can drastically outperform training from scratch.
+Deployment considerations (latency, model size, user interface) are just as important as accuracy.
+#### What’s Next:
+Deploy the EfficientNet-B2 + Gradio app on Hugging Face Spaces.
+Extend dataset coverage to all 39 classes for broader agricultural use cases.
+Integrate a fine-tuned LLM to provide instant, detailed treatment suggestions for detected diseases.
+
+
 
 
 
