@@ -1,61 +1,91 @@
-# Replicating-ViT-Research-Paper: Plant Leaf Disease Detection using Vision Transformers 🍃🍂🧑‍🔬📝💻
+# Replicating-ViT-Research-Paper & Plant Leaf Disease Detection using Vision Transformers 🍃🍂🧑‍🔬📝💻
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
 
+# 1. Project Overview 📝
 
-This is my attempt to replicate the Vision Transformer Paper **"AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR IMAGE RECOGNITION AT SCALE"** from scratch using *PyTorch*.
+This project replicates the **Vision Transformer (ViT)** Architecture from the groundbreaking 2020 research paper , "An Image is Worth 16x16 Words" and applies it to plant disease classification.
 
-For this project I'm using ViT to classify Plant Leaf Diseases for Tomato 🍅 , BellPepper🫑 and Potato🥔. This project is heavily inspired by the Mr. Daniel Bourke's Online Pytorch Course, which helped me in providing foundation and approach for implementing ViT in a modular and scalable way.
+I replicated a ViT from scratch using PyTorch including patch embedding, transformer encoder layers, and classification head — to deeply understand its mechanics. 
 
-**📊 Project Goals**
+To test the architecture , I trained it on a 3-Class subset of Plant Village Dataset(Tomato Early Blight, Tomato Healthy, Tomato Late Blight). 
+Due to the limited dataset size (~500 train / 150 test images per class), the scratch model underfit — mirroring the ViT paper’s emphasis on the need for large-scale pretraining.
 
-- ✅ Replicate the Vision Transformer architecture
-- ✅ Train a ViT model from scratch
-- ✅ Fine-tune a pretrained ViT model
-- ✅ Classify Plant Leaf Disease using Healthy and Affected Leaf Images 
-- ✅ Compare Performance of ViT Built from scratch vs. Pretrained ViT 
+Then I fine-tuned a Pre-trained ViT(VIT B-16) on the same dataset , which achieved a strong performance and correctly classified unseen plant disease image I found online.
+This confirmed the transfer learning's advantage of pre-trained transformers in low-computation and low-data constraints.
 
+The learnings from this replication will be applied in my upcoming mobile plant disease detection app using a lightweight model for 8+ classes.
+ 
 
-**🗂️Repository Structure**
+# 2. Motivation 🏃‍♂️‍➡️📈📖
 
-* data/
-* going_modular/   #Contains modular functions in .py script file .
-    * |---/data_setup.py
-    * |---/engine.py
-    * |---/helper_function.py
-    * |---/image_sampling.py
-    * |---/utils.py
-* images/          #Contains images explaining equations and figures in ViT Paper , and also images for custom predictions.
-* Modular_Functions_For_Pytorch.ipynb          #Notebook explaining the modular functions for pytorch workflow.
-* Replicating_The_ViT_Paper_from_Scratch.ipynb      #The main ViT Paper Replication Notebook.
+The ViT paper was a landmark in Computer Vision , that proved Transformer architecture which initially used for NLP can outperform CNNs if you give enough data.
 
+However in real-world domains like Agriculture we don't have millions of labelled images to train from scratch.
 
-## 📖 Understanding Vision Transformers
+By replicating the ViT from scratch and fine-tune a pretrained ViT from scratch on a small-scale agriculture dataset , I aimed for:
 
-### 🧠 What is Vision Transformer (ViT)?
+- Understand every components , equations and math behind the VIT architecture by building it myself.
+- Compare the custom ViT I built vs Transfer Learning Performance.
+- Highlight The data requirements of ViT for High Accuracy.
+- Prepare for Deploying the model trained using Transfer Learning for Real World use.
 
-ViT treats image patches like tokens in NLP and applies Transformer encoders to classify images.
+This project blends both research paper replication with practical application development, demostrating both theoretical depth and deployement-focused thinking.
 
-ViT processes an image by:
-1. Splitting it into patches
-2. Embedding each patch
-3. Passing through Transformer blocks
-4. Using the [CLS] token for classification
+# 3. Dataset 📊📚
 
-### Why Vision Transfomers?
-- Traditional Convolutional Neural Networks(CNNS) dominates the computer vision due to their ability to capture local patterns. However, CNNs have limitations in modeling long-range dependencies and lack flexibility. Vision Transformers leverage self-attention to overcome this by treating images like sequences, similar to how NLP models treat sentences.
-  
-### Transformers in NLP
-- Transformers were originally introduced in the famous paper `Attention is All you Need(2017)` and was originally designed for NLP tasks. They use self-attention to weigh relationships between tokens in a sequence.
+The dataset is derived from **PlantVillage** Dataset,  a large-scale collection of plant leaf images used for plant disease detection research.
 
+### Original Dataset Details:
+- Classes: 39 (various crop species, multiple disease types, and healthy leaves, plus a “background without leaves” class).
+- Total Images: 61,486.
+- Augmentation Techniques Applied in Original Dataset:
+  * Horizontal & vertical flipping
+  * Gamma correction
+  * Noise injection
+  * PCA color augmentation
+  * Rotation
+  * Scaling
+#### Examples of Classes in the Original Dataset:
+- Apple (Scab, Black Rot, Cedar Apple Rust, Healthy)
+- Pepper Bell (Bacterial Spot, Healthy)
+- Potato (Early Blight, Healthy, Late Blight)
+- Tomato (Bacterial Spot, Early Blight, Healthy, Late Blight, and more)
+- Plus several other fruit, vegetable, and background categories.
+### Classes Used for This Project’s ViT Replication:
+For the purpose of replicating the Vision Transformer paper under limited compute and training time constraints, I selected 3 classes from the original dataset:
+ - Tomato Early Blight
+ - Tomato Healthy
+ - Tomato Late Blight
+#### Sampling Strategy for This Experiment:
+- Training Set: 500 images per class.
+- Test Set: 150 images per class.
+Balanced sampling ensures equal representation of all classes during training and evaluation.
+### 📌 Why Reduce the Dataset?
+The primary goal was to replicate the ViT paper’s architecture from scratch and compare it against a pretrained ViT model under a controlled, smaller-scale setup.
+Using fewer classes and fewer images allowed faster iteration and debugging without requiring massive GPU resources.
 
-## Project Implementation 💻📐
+# 4. Methodology ⚙️🧱🏗️
 
-### From Words -> Patches to Image -> Patches 
-- In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them. 
+- This project was conducted in two phases : **(A) Replicating ViT Architecture From Scratch.**  and **(B) Fine-tuning Pre-trained ViT for Plant disease classification.**
 
+## A. Vision Transformer (ViT) Replication from Scratch
 
-I recreated key visuals from the ViT paper to understand how it works under the hood:
+The goal was to replicate the whole ViT architecture from scratch as closely as possible for image classification. 
+
+- In the original transformer architecture they break down words into patch embeddings and create sequence and then pass it through the transformer layers , Similarly in ViT we break down a 2-Dimensional picture into patches of equal size (16x16 in this case) and combine them to form a linear sequence and then pass it into transformer layers to classify them.
+
+- This research paper contains Figures and Equations  which decribe the ViT architecture as pieces of puzzle and we are here to put all together to form the puzzle. Recreating This will help us to understand the math behind the architecture and how it works under the hood.
+
+- Key steps:
+**Patch Extraction** – splitting input images into fixed-size patches and flattening them.
+**Linear Projection** – embedding patches into a dense representation.
+**Positional Encoding** – adding positional information to embeddings.
+**Transformer Encoder** – processing embeddings through stacked encoder blocks consisting of:
+   - Multi-Head Self Attention (MHSA)  
+   - Add & Norm (residual connections + layer normalization)**
+   - Feed-Forward Network (FFN)
+   - Add & Norm
 
 - **Figure 1 Explaining the ViT architecture**
   
@@ -104,18 +134,46 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 
 ![Equation 4](images/5.png)
 
+### Table 1 : 
+
+The final piece of the ViT architecture puzzle we'll focus on (for now) is Table 1.
+
+Table 1: Details of Vision Transformer model variants. Source: ViT paper.
+
+| Model | Layers | Hidden size $D$ | MLP size | Heads | Params |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| ViT-Base | 12 | 768 | 3072 | 12 | $86M$ |
+| ViT-Large | 24 | 1024 | 4096 | 16 | $307M$ |
+| ViT-Huge | 32 | 1280 | 5120 | 16 | $632M$ |
+
+This table showcasing the various hyperparameters of each of the ViT architectures.
+
+* ViT-Base , ViT-Large and ViT-Huge are all different sizes of the same model architecture.
+
+* Layers - the number of transformer encoder layers
+* Hidden size $D$ - the embedding size throughout the architecture
+* MLP size - the number of hidden units/neurons in the MLP
+* Head - the number of multi-head self-attention
+
+You can see the numbers gradually increase from ViT-Base to ViT-Huge.
+
+We're going to focus on replicating ViT-Base (start small and scale up when necessary) but we'll be writing code that could easily scale up to the larger variants.
+
 ### Putting All together to Form Entire ViT Architecture to Usable PyTorch Code
 ![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
+## B. Pretrained ViT Fine-tuning
+Given that training from scratch with only ~500 images per class led to underfitting (compared to millions of images in the original paper), I fine-tuned a pretrained ViT model on the same dataset. This significantly improved accuracy and stability in predictions.
 
+# 5. Results and Evaluation 📈📝
 
+## A. Performance Comparison 
 
-
-
-
-
-
+| Model Variant                    | Train Accuracy | Test Accuracy | Train Loss | Test Loss | Observations                                                                                   |
+| -------------------------------- | -------------- | ------------- | ---------- | --------- | ---------------------------------------------------------------------------------------------- |
+| **ViT (from scratch)**           | 33.79%         | 37.50%        | 1.1173     | 1.1087    | Struggled to converge due to limited data and lack of LR warmup, decay, and gradient clipping. |
+| **ViT (pretrained, fine-tuned)** | **98.45%**     | **98.96%**    | 0.0697     | 0.0686    | Achieved near-perfect accuracy thanks to transfer learning from ImageNet weights.              |
 
 
 
