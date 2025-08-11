@@ -236,17 +236,17 @@ I have made custom predictions on the images of the tomato leaves I have found o
 
 ## A. Deployment Plan
 The project will be deployed in a way that maximizes accessibility for end-users and demonstrates industry-ready skills:
-**1. Model Optimization** 
-- Use EfficientNet-B2 for real-time inference.
-- Fine-tuned on 8 plant disease classes for lightweight, mobile-friendly performance.
-- Apply model quantization to reduce file size and improve latency.
-**2.User Interface with Gradio**
-- Build a Gradio web app allowing users to upload or capture leaf images.
-- Instant predictions with disease name, confidence score, and (planned) basic treatment suggestions.
-**3.Hosting on Hugging Face Spaces**
-- Deploy the Gradio app directly to Hugging Face Spaces for free public access.
-- Allows anyone (including recruiters) to try the model in their browser — no setup required.
-- Shareable live demo link for portfolio, resume, and LinkedIn post.
+- **1. Model Optimization** 
+  - Use EfficientNet-B2 for real-time inference.
+  - Fine-tuned on 8 plant disease classes for lightweight, mobile-friendly performance.
+  - Apply model quantization to reduce file size and improve latency.
+- **2.User Interface with Gradio**
+  - Build a Gradio web app allowing users to upload or capture leaf images.
+  - Instant predictions with disease name, confidence score, and (planned) basic treatment suggestions.
+- **3.Hosting on Hugging Face Spaces**
+  - Deploy the Gradio app directly to Hugging Face Spaces for free public access.
+  - Allows anyone (including recruiters) to try the model in their browser — no setup required.
+  - Shareable live demo link for portfolio, resume, and LinkedIn post.
 
 # 7. Conclusion & Key Takeaways 🏁
 This project began as a research & replication exercise and evolved into a practical, deployable AI solution.
