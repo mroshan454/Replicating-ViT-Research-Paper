@@ -127,7 +127,7 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - **Equation 4 Explaination🧠**
 - At the very beginning (Eq. 1), we prepended a special [class] token to the patch embeddings.
 - After passing through L Transformer layers, we take the output corresponding to the [class] token (i.e.,z_0^L) as the final image representation.
--**This vector now goes through a classification head:**
+- **This vector now goes through a classification head:**
 - During pretraining: it's an MLP with one hidden layer.
 - During fine-tuning: it's a single linear layer.
 - The result is the final logits used for classification (e.g., Early Blight /Late Blight /Healthy).
