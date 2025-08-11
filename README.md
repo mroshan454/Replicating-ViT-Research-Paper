@@ -250,11 +250,11 @@ The project will be deployed in a way that maximizes accessibility for end-users
 
 # 7. Conclusion & Key Takeaways 🏁
 This project began as a research & replication exercise and evolved into a practical, deployable AI solution.
-### Phase 1 — Learning by Building:
+### Phase 1 - Learning by Building:
 I replicated the Vision Transformer (ViT) architecture from scratch to understand the underlying math and mechanisms, including patch embeddings, positional encoding, and multi-head self-attention. While training on a small dataset (~500 images per class) led to underfitting, this phase deepened my transformer intuition.
-### Phase 2 — Leveraging Transfer Learning:
+### Phase 2 - Leveraging Transfer Learning:
 I fine-tuned a pretrained ViT on my custom plant disease dataset, achieving ~98.96% test accuracy. This confirmed the power of large-scale pretraining and transfer learning in real-world scenarios.
-### Phase 3 — Preparing for Deployment:
+### Phase 3 - Preparing for Deployment:
 To make the solution lightweight and accessible, I am transitioning to EfficientNet-B2, building a Gradio-based interface, and deploying it on Hugging Face Spaces for instant public access.
 #### Key Lessons Learned:
 Architecture alone isn’t enough — data quantity & quality matter as much as model design.
