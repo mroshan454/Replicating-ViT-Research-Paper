@@ -127,10 +127,10 @@ After forming the input token sequence from Equation 1, we feed it into a standa
 - **Equation 4 Explaination🧠**
 - At the very beginning (Eq. 1), we prepended a special [class] token to the patch embeddings.
 - After passing through L Transformer layers, we take the output corresponding to the [class] token (i.e.,z_0^L) as the final image representation.
-- This vector now goes through a classification head:
+- **This vector now goes through a classification head:**
 - During pretraining: it's an MLP with one hidden layer.
 - During fine-tuning: it's a single linear layer.
-- The result is the final logits used for classification (e.g., happy/sad/angry).
+- The result is the final logits used for classification (e.g., Early Blight /Late Blight /Healthy).
 
 ![Equation 4](images/5.png)
 
@@ -163,8 +163,24 @@ We're going to focus on replicating ViT-Base (start small and scale up when nece
 ![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
+Now we have replicated an Entire ViT Architecture in PyTorch!!!🤩🥳
+
 ## B. Pretrained ViT Fine-tuning
+
 Given that training from scratch with only ~500 images per class led to underfitting (compared to millions of images in the original paper), I fine-tuned a pretrained ViT model on the same dataset. This significantly improved accuracy and stability in predictions.
+
+
+
+## C. Code Structure & Modularity
+To ensure the project remains scalable, maintainable, and easy to experiment with, the codebase follows a modular design inspired by Daniel Bourke’s PyTorch workflow:
+Separate files for dataset processing, model architecture, training/validation loops, and utility functions.
+- Configuration-driven design — key parameters (learning rate, batch size, number of epochs) can be changed in a single config section without altering core logic.
+- Reusability — training and evaluation functions are generic enough to be reused across experiments and datasets.
+- Ease of debugging — isolated components make troubleshooting straightforward.
+This modular approach made it possible to switch between the scratch-built ViT and pretrained ViT with minimal code changes, accelerating iteration speed.
+
+
+
 
 # 5. Results and Evaluation 📈📝
 
@@ -173,7 +189,7 @@ Given that training from scratch with only ~500 images per class led to underfit
 | Model Variant                    | Train Accuracy | Test Accuracy | Train Loss | Test Loss | Observations                                                                                   |
 | -------------------------------- | -------------- | ------------- | ---------- | --------- | ---------------------------------------------------------------------------------------------- |
 | **ViT (from scratch)**           | 33.79%         | 37.50%        | 1.1173     | 1.1087    | Struggled to converge due to limited data and lack of LR warmup, decay, and gradient clipping. |
-| **ViT (pretrained, fine-tuned)** | **98.45%**     | **98.96%**    | 0.0697     | 0.0686    | Achieved near-perfect accuracy thanks to transfer learning from ImageNet weights.              |
+| **ViT (pretrained, fine-tuned)** | **98.45%**     | **98.96%**    | 0.0697     | 0.0686    | Achieved near-perfect accuracy thanks to transfer learning from Pre-trained torchvison models.              |
 
 ## B. Accuracy Progression Over the Epochs 
 
@@ -187,6 +203,79 @@ You can see the ViT Built from scratch is not showing promising performance and 
 ![Pretrained ViT Performance](images/Pretrained_VIT_Performance.png)
 
 The Pretrained ViT Performance really well , and it looks like the Perfect Loss Curve!!!!🤩👍
+
+### C. Custom Prediction on Images using Pre-Trained ViT 🍃✅
+
+We trained the Model on 3 Classes from Plant Village Dataset , which **Tomato Leaf Early Blight** , **Tomato Leaf Late Blight*** and **Healthy Tomato Leaf**.
+
+I have made custom predictions on the images of the tomato leaves I have found online and it give promising results.
+
+
+### Actual Label - Tomato Leaf Early Blight | Predicted Correctly with Prediction Probability - 88% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Early_Blight.png)
+
+
+### Actual Label - Tomato Leaf Late Blight | Predicted Correctly with Prediction Probability - 99% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Late_Blight.png)
+
+
+### Actual Label - Healthy Tomato Leaf | Predicted Correctly with Prediction Probability - 98% ✅
+![Tomato_Early_Blight_Prediction](images/Prediction_Tomato_Healthy.png)
+
+### D. Key Takeaways 🎯
+
+- From Scratch ViT underperformed due to the small scale of Training data and absence of advanced optimization training techniques.
+- Fine-tuned Pretrained ViT performed **61% more higher accuracy** on the same training dataset.
+- Even with just 3 classes , transfer learning delivers production-ready performance.
+
+### E. Lessons Learned 📖
+- Data quantity and quality are crucial for training transformer models from scratch.
+- Pretraining + fine-tuning is a game-changer for small datasets.
+- Tracking both loss and accuracy per epoch makes model performance easier to interpret and present.
+
+
+# 6. Deployement and Next Steps 🚀📱
+
+## A. Deployment Plan
+The project will be deployed in a way that maximizes accessibility for end-users and demonstrates industry-ready skills:
+- **1. Model Optimization** 
+  - Use EfficientNet-B2 for real-time inference.
+  - Fine-tuned on 8 plant disease classes for lightweight, mobile-friendly performance.
+  - Apply model quantization to reduce file size and improve latency.
+- **2.User Interface with Gradio**
+  - Build a Gradio web app allowing users to upload or capture leaf images.
+  - Instant predictions with disease name, confidence score, and (planned) basic treatment suggestions.
+- **3.Hosting on Hugging Face Spaces**
+  - Deploy the Gradio app directly to Hugging Face Spaces for free public access.
+  - Allows anyone (including recruiters) to try the model in their browser — no setup required.
+  - Shareable live demo link for portfolio, resume, and LinkedIn post.
+
+# 7. Conclusion & Key Takeaways 🏁
+This project began as a research & replication exercise and evolved into a practical, deployable AI solution in future.
+### Phase 1 - Learning by Building:
+I replicated the Vision Transformer (ViT) architecture from scratch to understand the underlying math and mechanisms, including patch embeddings, positional encoding, and multi-head self-attention. While training on a small dataset (~500 images per class) led to underfitting, this phase deepened my transformer intuition.
+### Phase 2 - Leveraging Transfer Learning:
+I fine-tuned a pretrained ViT on my custom plant disease dataset, achieving ~98.96% test accuracy. This confirmed the power of large-scale pretraining and transfer learning in real-world scenarios.
+### Phase 3 - Preparing for Deployment:
+To make the solution lightweight and accessible, I am transitioning to EfficientNet-B2, building a Gradio-based interface, and deploying it on Hugging Face Spaces for instant public access.
+#### Key Lessons Learned:
+Architecture alone isn’t enough — data quantity & quality matter as much as model design.
+Pretraining is a game-changer — fine-tuning can drastically outperform training from scratch.
+Deployment considerations (latency, model size, user interface) are just as important as accuracy.
+#### What’s Next:
+Deploy the EfficientNet-B2 + Gradio app on Hugging Face Spaces.
+Extend dataset coverage to all 39 classes for broader agricultural use cases.
+Integrate a fine-tuned LLM to provide instant, detailed treatment suggestions for detected diseases.
+
+# Acknowledgements🙏
+
+I want to give a special thanks to **Daniel Bourke**, whose PyTorch course was a true game-changer in my journey to master PyTorch and Vision Transformers. Without his clear explanations, practical approach, and modular code style, I wouldn’t have been able to implement and understand the Vision Transformer architecture so effectively. Daniel is truly a hero in my PyTorch learning path, and I highly recommend his course to anyone serious about mastering PyTorch!!.
+
+Course repository - https://github.com/mrdbourke/pytorch-deep-learning/
+
+
+
+
 
 
 
