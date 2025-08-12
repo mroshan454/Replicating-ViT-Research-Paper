@@ -163,6 +163,8 @@ We're going to focus on replicating ViT-Base (start small and scale up when nece
 ![All together](images/Entire_ViT_in_Code.png)
 ![All together](images/Whole_ViT_in_PyTorch_Code.png)
 
+Now we have replicated an Entire ViT Architecture in PyTorch!!!🤩🥳
+
 ## B. Pretrained ViT Fine-tuning
 
 Given that training from scratch with only ~500 images per class led to underfitting (compared to millions of images in the original paper), I fine-tuned a pretrained ViT model on the same dataset. This significantly improved accuracy and stability in predictions.
