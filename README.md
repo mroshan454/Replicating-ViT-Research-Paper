@@ -251,7 +251,7 @@ The project will be deployed in a way that maximizes accessibility for end-users
   - Shareable live demo link for portfolio, resume, and LinkedIn post.
 
 # 7. Conclusion & Key Takeaways 🏁
-This project began as a research & replication exercise and evolved into a practical, deployable AI solution.
+This project began as a research & replication exercise and evolved into a practical, deployable AI solution in future.
 ### Phase 1 - Learning by Building:
 I replicated the Vision Transformer (ViT) architecture from scratch to understand the underlying math and mechanisms, including patch embeddings, positional encoding, and multi-head self-attention. While training on a small dataset (~500 images per class) led to underfitting, this phase deepened my transformer intuition.
 ### Phase 2 - Leveraging Transfer Learning:
