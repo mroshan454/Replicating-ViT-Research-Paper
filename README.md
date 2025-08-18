@@ -1,6 +1,6 @@
 # Replicating-ViT-Research-Paper & Plant Leaf Disease Detection using Vision Transformers 🍃🍂🧑‍🔬📝💻
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github.com/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mroshan454/Replicating-ViT-Research-Paper/blob/main/Replicating_The_ViT_Paper_from_Scratch.ipynb)
 
 # 1. Project Overview 📝
 
