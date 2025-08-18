@@ -78,10 +78,10 @@ The goal was to replicate the whole ViT architecture from scratch as closely as 
 - This research paper contains Figures and Equations  which decribe the ViT architecture as pieces of puzzle and we are here to put all together to form the puzzle. Recreating This will help us to understand the math behind the architecture and how it works under the hood.
 
 - Key steps:
-**Patch Extraction** – splitting input images into fixed-size patches and flattening them.
-**Linear Projection** – embedding patches into a dense representation.
-**Positional Encoding** – adding positional information to embeddings.
-**Transformer Encoder** – processing embeddings through stacked encoder blocks consisting of:
+- **Patch Extraction** – splitting input images into fixed-size patches and flattening them.
+- **Linear Projection** – embedding patches into a dense representation.
+- **Positional Encoding** – adding positional information to embeddings.
+- **Transformer Encoder** – processing embeddings through stacked encoder blocks consisting of:
    - Multi-Head Self Attention (MHSA)  
    - Add & Norm (residual connections + layer normalization)**
    - Feed-Forward Network (FFN)
